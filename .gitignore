@@ -1,0 +1,4 @@
+node_modules
+*.thumbs
+*.DS_STORE
+bower_components
