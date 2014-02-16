@@ -1,0 +1,62 @@
+@import "helpers";
+@import "resets"; 
+@import "panels";
+@import "nodes"; 
+
+$varBoxSize:35px;
+
+.varBox{
+	width:$varBoxSize;
+	height:$varBoxSize;
+	line-height:$varBoxSize; 
+	background:url('../images/varbg.png');
+	float:left;
+	margin-left:15px;
+	color:$bright;
+	text-align:center; 
+	font-size:24px;
+}
+
+#inputConveyor{
+	margin-left:$toolboxWidth;
+	position: absolute;
+	width:500px;
+	height:40px;
+	top:15px;
+	z-index: 0;
+}
+
+#inputConveyorBelt{
+	position:absolute;
+	bottom:0px;
+	background-color:#006600;
+	width:100%;
+	height:10px;
+	border-radius:5px 5px;
+}
+
+.main{
+	width:100%;
+	height:100%;
+}
+
+.sceneBox{
+	background-color:$sceneBG;
+	width:100%;
+	height:100%;
+	float:left;
+}
+
+html{ }
+
+*{
+	margin:0px;
+	padding:0px; 
+	overflow-x:hidden;
+}
+
+li{
+	list-style-type:none; 
+	cursor:pointer;
+}
+

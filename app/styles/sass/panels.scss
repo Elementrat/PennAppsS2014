@@ -1,0 +1,95 @@
+$toolboxWidth:250px;
+$memoryZoneWidth:300px;
+.panel{
+	position:absolute;
+}
+
+.vendType{
+	background-color:$dark;
+	color:$bright;
+	margin-bottom:5px;
+	padding-bottom:5px;
+	border-radius:5px 5px;
+	& h3{
+		padding-top:5px;
+		padding-bottom:5px;
+		margin-top:0px;
+		background-color:$accentDark;
+		margin-bottom:5px;
+	}
+}
+
+.box{
+	width:20px;
+	height:20px;
+	background-color:$bright;
+}
+
+.vendBtn{
+	float:left;
+	padding:5px;
+	border-radius:2px 2px;
+	width:65px;
+	margin-left:2px;
+	margin-bottom:2px;
+	color:$bright;
+	cursor:pointer;
+	text-align:center;
+	border:2px solid #cccccc;
+	&:hover{
+		background-color:#333399;
+	}
+
+}
+
+#toolBox{
+	left:0px;
+	bottom:0px;
+	height:100%;
+	background-color:$bright;
+	color:$dark;
+	width:$toolboxWidth;
+	text-align:center;
+	padding-right:10px;
+	padding-left:10px;
+	z-index: 2;
+	& li:hover{
+		color: lighten($dark,20)
+	}
+
+}
+
+#memoryZone{
+	right:-350px;
+	top:0px;
+	color:$bright;
+	width:$memoryZoneWidth;
+	& h2 {
+		padding-top:10px;
+		padding-bottom: 10px;
+		background-color:$dark;
+		text-align: center;
+	}
+}
+
+.fleft{
+	float:left;
+}
+
+.memoryStick{
+	background:url('../images/rambg.png');
+	background-size:cover;
+	height:70px;
+	width:300px;
+	text-indent:20px;
+	margin-bottom:5px;
+	line-height: 40px;
+
+	.memText{
+		background-color:#333333;
+		width:120px;
+		margin-left:5px;
+		float:left;
+		margin-top:10px;
+	}
+}

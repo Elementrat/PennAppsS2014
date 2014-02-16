@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" ng-app="learnCode">
+<head>
+	<meta charset="UTF-8">
+	<title>Puzzmen</title>
+	<link rel="stylesheet" href="styles/main.css">
+	<script src = "../bower_components/angular/angular.min.js"> </script>
+	<script src = "../bower_components/jquery/dist/jquery.min.js"> </script>
+	<script src = "../bower_components/jqueryui/ui/minified/jquery-ui.min.js"> </script>
+</head>
+<body>
+	<div class = "main" ng-controller = "MainCtrl"> 
+	<div class = "panel" id = "toolBox" ng-controller="ToolBoxCtrl"> 
+		<h2>CODE VENDER</h2> 
+		<div ng-repeat = "(key, nodes) in tools"  class = "vendType">
+			<h3>{{key}}</h3>
+			<div ng-repeat = "node in nodes" class = "vendBtn" ng-click="selectedTool(node)"> {{node}} </div>
+		</div>
+	</div>
+
+	<div class = "panel" id = "memoryZone" ng-controller="MemoryZoneCtrl"> 
+	<ul>
+		<li><h2>MEMORY ZONE</h2> </li>
+		<li class = "memoryStick" ng-repeat = "(key,value) in data.memory">
+			<div class = "memText">{{key}} </div> <div class = "fleft">is </div><div class = "memText">{{value}} </div>
+		</li> 
+	</ul>
+	</div>
+
+	<div class = "sceneBox"> 
+		<div id = "inputConveyor"> 
+			<div class = "varBox">7</div>
+			<div class = "varBox">1</div>
+			<div class = "varBox">5</div>
+			<div class = "varBox">2</div>
+			<div class = "varBox">5</div>
+			<div class = "varBox">7</div>
+			<div class = "varBox">4</div>
+		<div id = "inputConveyorBelt"> </div>
+	</div>
+
+		<div class = "node type1" draggable ng-repeat = "node in data.nodes" data-test = "node.data" style = "left:500px"> 
+			<div class = "nodeHandle" id = "node_{{node.id}}"></div>
+
+			<div class = "expression"> {{node.opCode}} </div>
+
+			<div class = "bg" ng-style= "getStyle('{{node.opCode}}')" > </div>
+			<div class = "cone in oneOfTwo"ng-show="{{node.neededInputs>=1}}">{{in}}</div>
+			<div class = "cone in twoOfTwo" ng-show="{{node.neededInputs==2}}">{{in}}</div>
+
+			<div class = "cone out oneOfOne">b</div>
+		</div>
+
+		</div>
+	</div>
+
+</body>
+
+	<script src = "scripts/services.js"> </script>
+	<script src = "scripts/controllers.js"> </script>
+	<script src = "scripts/nodes.js"> </script>
+	<script src = "scripts/engine.js"> </script>
+</html>
